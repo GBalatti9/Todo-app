@@ -9,11 +9,9 @@ export const AddTodoForm = () => {
     });
 
     const handleForm = (e) => {
-
         e.preventDefault();
         console.log(formState.todo);
         onResetForm();
-
     }
 
     return (
@@ -21,6 +19,7 @@ export const AddTodoForm = () => {
             <input
                 type="text"
                 placeholder="New task"
+                className="form-control"
                 name="todo"
                 value={ formState.todo ? formState.todo : '' }
                 onChange={ onInputChange }/>
