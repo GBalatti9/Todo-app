@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import { AddTodoForm } from './components';
 import { TodoList } from './components/TodoList';
+import { todoReducer } from './helpers/todoReducer';
 
 const initialState = [
     {
@@ -10,9 +11,6 @@ const initialState = [
     }
 ]
 
-const todoReducer = () => {
-
-}
 
 export const Container = () => {
 
