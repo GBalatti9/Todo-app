@@ -7,6 +7,10 @@ export const todoReducer = ( todos, action ) => {
             return [ ...todos, action.payload ];
             break;
     
+        case '[TODO] Delete Todo':
+            return todos.filter( todo => todo.id !== action.payload );
+            break;
+
         default:
             break;
     }
