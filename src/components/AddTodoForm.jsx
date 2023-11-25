@@ -29,7 +29,7 @@ export const AddTodoForm = ({ onNewTodo }) => {
                 value={ formState.todo ? formState.todo : '' }
                 onChange={ onInputChange }/>
             <button
-                type="button"
+                type="submit"
                 className="btn btn-outline-primary col-3">
                 Add
             </button>

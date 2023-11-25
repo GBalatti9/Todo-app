@@ -3,6 +3,10 @@ import { AddTodoForm } from './components';
 import { TodoList } from './components/TodoList';
 import { todoReducer } from './helpers/todoReducer';
 
+const ACTIONS = {
+    ADD_TODO: '[TODO] Add Todo',
+}
+
 const initialState = [
     {
         id: new Date().getTime(),
@@ -35,7 +39,7 @@ export const Container = () => {
         }
 
         dispatch({
-            type: '[TODO] Add Todo',
+            type: ACTIONS.ADD_TODO,
             payload: newItem,
         })
     }
