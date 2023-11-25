@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { AddTodoForm } from './components';
 import { TodoList } from './components/TodoList';
 import { todoReducer } from './helpers/todoReducer';
@@ -11,12 +11,22 @@ const initialState = [
     }
 ]
 
+const init = (initialState) => {
+    const storageData = localStorage.getItem('todos');
+    const initialData = storageData ? JSON.parse( storageData ) : initialState;
+    return initialData;
+}
 
 export const Container = () => {
 
-    const [ todos, dispatch ] = useReducer( todoReducer, initialState );
+    const [todos, dispatch] = useReducer( todoReducer, initialState, init );
 
-    const handleNewTodo = ( newTodo ) => {
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos])
+
+
+    const handleNewTodo = (newTodo) => {
 
         const newItem = {
             id: new Date().getTime(),
@@ -32,8 +42,8 @@ export const Container = () => {
 
     return (
         <div className='card'>
-            <AddTodoForm onNewTodo={ handleNewTodo }/>
-            <TodoList items={ todos }/>
+            <AddTodoForm onNewTodo={handleNewTodo} />
+            <TodoList items={todos} />
         </div>
     )
 }

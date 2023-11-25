@@ -10,8 +10,10 @@ export const AddTodoForm = ({ onNewTodo }) => {
 
     const handleForm = (e) => {
         e.preventDefault();
-        // console.log(formState.todo);
-        onNewTodo(formState.todo)
+        
+        if((formState.todo).length <= 1) return;
+
+        onNewTodo(formState.todo);
         onResetForm();
     }
 
