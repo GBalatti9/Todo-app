@@ -17,7 +17,7 @@ export const AddTodoForm = () => {
     return (
         <form 
             onSubmit={ handleForm }
-            className="container border d-flex">
+            className="container d-flex">
             <input
                 type="text"
                 placeholder="New task"

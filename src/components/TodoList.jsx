@@ -1,10 +1,11 @@
+import { TodoItem } from "./TodoItem"
 
 export const TodoList = ({ items }) => {
     return (
         <ul>
             {
                 items.map((item, i) => (
-                    <p key={item + i}>{item.todo}</p>
+                    <TodoItem item={item} key={item + i}/>
                 ))
             }
         </ul>
