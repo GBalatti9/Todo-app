@@ -3,7 +3,7 @@ export const TodoItem = ({ item }) => {
     console.log({item});
     return (
         <>
-        <li>{item.todo}</li>
+            <li>{item.todo}</li>
         </>
     )
 }

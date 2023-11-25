@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "../hooks/useForm";
 
 
-export const AddTodoForm = () => {
+export const AddTodoForm = ({ onNewTodo }) => {
 
     const { formState, onInputChange, onResetForm } = useForm({
         todo: '',
@@ -10,14 +10,15 @@ export const AddTodoForm = () => {
 
     const handleForm = (e) => {
         e.preventDefault();
-        console.log(formState.todo);
+        // console.log(formState.todo);
+        onNewTodo(formState.todo)
         onResetForm();
     }
 
     return (
         <form 
             onSubmit={ handleForm }
-            className="container d-flex">
+            className="containerT d-flex">
             <input
                 type="text"
                 placeholder="New task"
