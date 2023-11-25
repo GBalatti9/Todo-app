@@ -1,33 +1,29 @@
 import { useState } from "react"
+import { useForm } from "../hooks/useForm";
 
 
 export const AddTodoForm = () => {
 
-    const [value, setValue] = useState('');
-
-    const handleInput = ({ target }) => {
-
-        let inputValue = target.value;
-
-        setValue( inputValue );
-
-    }
+    const { formState, onInputChange, onResetForm } = useForm({
+        todo: '',
+    });
 
     const handleForm = (e) => {
 
         e.preventDefault();
-        console.log({ value });
-        setValue('')
+        console.log(formState.todo);
+        onResetForm();
 
     }
 
     return (
-        <form action="" onSubmit={ handleForm }>
+        <form onSubmit={ handleForm }>
             <input
                 type="text"
                 placeholder="New task"
-                value={ value }
-                onChange={ handleInput }/>
+                name="todo"
+                value={ formState.todo ? formState.todo : '' }
+                onChange={ onInputChange }/>
             <button
                 type="button"
                 className="btn btn-outline-primary">
