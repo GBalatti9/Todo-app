@@ -1,7 +1,9 @@
-import React from 'react';
+import { AddTodoForm } from './components';
 
 export const Container = () => {
     return (
-        <div>Container</div>
+        <div className='card'>
+            <AddTodoForm />
+        </div>
     )
 }
