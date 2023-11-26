@@ -20,7 +20,7 @@ export const AddTodoForm = ({ onNewTodo }) => {
     return (
         <form 
             onSubmit={ handleForm }
-            className="containerT d-flex">
+            className="d-flex mb-4">
             <input
                 type="text"
                 placeholder="New task"
@@ -30,7 +30,7 @@ export const AddTodoForm = ({ onNewTodo }) => {
                 onChange={ onInputChange }/>
             <button
                 type="submit"
-                className="btn btn-outline-primary col-3">
+                className="btn btn-primary col-3">
                 Add
             </button>
         </form>

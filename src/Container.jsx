@@ -19,20 +19,20 @@ const initialState = [
 
 const init = (initialState) => {
     const storageData = localStorage.getItem('todos');
-    const initialData = storageData ? JSON.parse( storageData ) : initialState;
+    const initialData = storageData ? JSON.parse(storageData) : initialState;
     return initialData;
 }
 
 export const Container = () => {
 
-    const [todos, dispatch] = useReducer( todoReducer, initialState, init );
+    const [todos, dispatch] = useReducer(todoReducer, initialState, init);
 
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos])
 
 
-    const handleNewTodo = ( newTodo ) => {
+    const handleNewTodo = (newTodo) => {
 
         const newItem = {
             id: new Date().getTime(),
@@ -46,7 +46,7 @@ export const Container = () => {
         })
     }
 
-    const handleDeleteTodo = ( id ) => {
+    const handleDeleteTodo = (id) => {
 
         dispatch({
             type: ACTIONS.DELETE_TODO,
@@ -55,19 +55,25 @@ export const Container = () => {
 
     }
 
-    const handleToggleTodo = ( id ) => {
+    const handleToggleTodo = (id) => {
         dispatch({
             type: ACTIONS.TOGGLE_TODO,
             payload: id,
         })
 
-        // console.log({id});
     }
 
     return (
-        <div className='card'>
-            <AddTodoForm onNewTodo={handleNewTodo} />
-            <TodoList items={todos} onDeleteTodo={ handleDeleteTodo } onToggle={ handleToggleTodo }/>
+        <div className='bg-primary d-flex justify-content-center align-items-center' style={{height: '100vh'}} >
+                <div className='card bg-white col-4 p-4'>
+                    <AddTodoForm
+                        onNewTodo={handleNewTodo}
+                        />
+                    <TodoList
+                        items={todos}
+                        onDeleteTodo={handleDeleteTodo}
+                        onToggle={handleToggleTodo} />
+                </div>
         </div>
     )
 }
