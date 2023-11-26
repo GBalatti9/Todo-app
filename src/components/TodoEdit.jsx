@@ -1,9 +1,9 @@
 
 
-export const TodoEdit = ({ handleForm, id, inputRef, onInputChange }) => {
+export const TodoEdit = ({ handleFormUpdate, id, inputRef, onInputChange }) => {
     return (
         <form 
-            onSubmit  = {(e) => handleForm(e, id)} 
+            onSubmit  = {(e) => handleFormUpdate(e, id)} 
             className = "d-flex justify-content-between col-12"
         >
         <input

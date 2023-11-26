@@ -4,7 +4,7 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
     return (
         <>
             <div 
-                className = "col-3 d-flex justify-content-around"
+                className = "d-flex justify-content-around text-align-center"
             >
             <input
                 type     = "checkbox"
@@ -12,7 +12,7 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
                 checked  = { item.done } />
             <span
                 onClick   = { () => onToggle( item.id ) }
-                className = { `${ item.done ? 'opacity-50 text-decoration-line-through' : '' } cursor-pointer` }>
+                className = { `${ item.done ? 'opacity-50 text-decoration-line-through' : '' } cursor-pointer p-1` }>
                     { item.todo }
             </span>
             </div>

@@ -7,8 +7,12 @@ export const Container = () => {
     const { todos, handleNewTodo, handleDeleteTodo, handleToggleTodo, handleUpdateTodo } = useTodo();
 
     return (
-        <div className='bg-primary d-flex justify-content-center align-items-center' style={{height: '100vh'}} >
-                <div className='card bg-white col-4 p-4'>
+        <div 
+            className='bg-primary p-4'
+            style={{height: '100vh'}} 
+            >
+                <h1 className='text-center text-white'>Todo List</h1>
+                <div className='card bg-white col-12 col-sm-6 col-md-4 shadow p-3 m-auto'>
                     <AddTodoForm
                         onNewTodo = { handleNewTodo }
                         />

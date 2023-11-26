@@ -15,7 +15,7 @@ export const TodoItem = ({ item, onDeleteTodo, onToggle, onUpdate }) => {
         setEdit( !edit )
     };
 
-    const handleFormUpdate = ( e, id, onUpdate ) => {
+    const handleFormUpdate = ( e, id ) => {
         e.preventDefault();
         if ( (formState.edit).length <= 1 ) return;
 
