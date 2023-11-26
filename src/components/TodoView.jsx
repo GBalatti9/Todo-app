@@ -28,7 +28,8 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
             <button
                 className = "btn btn-danger"
                 onClick   = { () => onDeleteTodo( item.id ) }>
-                <img src  = "../../docs/baseline_delete_black_24dp.png" alt = "Delete" />
+                <img src  = "docs/baseline_delete_black_24dp.png" alt = "Delete" />
+                
             </button>
             </div>
     </>
