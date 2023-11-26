@@ -23,14 +23,14 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
                 className = "btn btn-warning"
                 onClick   = { handleToggleEdit }
             >
-                {/* Edit */}
-                <img src = "../../docs/baseline_edit_black_24dp.png" alt = "Edit" />
+                Edit
+                {/* <img src = "../../docs/baseline_edit_black_24dp.png" alt = "Edit" /> */}
             </button>
             <button
                 className = "btn btn-danger"
                 onClick   = { () => onDeleteTodo( item.id ) }>
-                    {/* Delete */}
-                <img src  = "../../docs/baseline_delete_black_24dp.png" alt = "Delete" />
+                    Delete
+                {/* <img src  = "../../docs/baseline_delete_black_24dp.png" alt = "Delete" /> */}
                 
             </button>
             </div>
