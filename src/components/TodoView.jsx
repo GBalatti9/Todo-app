@@ -17,18 +17,20 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
             </span>
             </div>
             <div 
-                className = "col-4 d-flex justify-content-around"
+                className = "col-6 col-sm-5 col-md-4 d-flex justify-content-around"
             >
             <button
                 className = "btn btn-warning"
                 onClick   = { handleToggleEdit }
             >
-                <img src = "/docs/baseline_edit_black_24dp.png" alt = "Edit" />
+                Edit
+                {/* <img src = "/docs/baseline_edit_black_24dp.png" alt = "Edit" /> */}
             </button>
             <button
                 className = "btn btn-danger"
                 onClick   = { () => onDeleteTodo( item.id ) }>
-                <img src  = "/docs/baseline_delete_black_24dp.png" alt = "Delete" />
+                    Delete
+                {/* <img src  = "/docs/baseline_delete_black_24dp.png" alt = "Delete" /> */}
                 
             </button>
             </div>
