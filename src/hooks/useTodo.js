@@ -7,6 +7,7 @@ export const useTodo = () => {
         ADD_TODO: '[TODO] Add Todo',
         DELETE_TODO: '[TODO] Delete Todo',
         TOGGLE_TODO: '[TODO] Toggle Todo',
+        UPDATE_TODO: '[TODO] Update Todo',
     }
     
     const initialState = [
@@ -61,10 +62,22 @@ export const useTodo = () => {
 
     }
 
+    const handleUpdateTodo = ( id, newValue ) => {
+        console.log("HANDLE UPDATE TODO", { id, newValue });
+        dispatch({
+            type: ACTIONS.UPDATE_TODO,
+            payload: {
+                id,
+                newValue,
+            },
+        })
+    }
+
     return{
         todos,
         handleNewTodo,
         handleDeleteTodo,
         handleToggleTodo,
+        handleUpdateTodo,
     }
 }

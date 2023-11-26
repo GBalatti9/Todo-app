@@ -4,7 +4,7 @@ import { useTodo } from './hooks/useTodo';
 
 export const Container = () => {
 
-    const { todos, handleNewTodo, handleDeleteTodo, handleToggleTodo } = useTodo();
+    const { todos, handleNewTodo, handleDeleteTodo, handleToggleTodo, handleUpdateTodo } = useTodo();
 
     return (
         <div className='bg-primary d-flex justify-content-center align-items-center' style={{height: '100vh'}} >
@@ -13,9 +13,10 @@ export const Container = () => {
                         onNewTodo={handleNewTodo}
                         />
                     <TodoList
-                        items={todos}
-                        onDeleteTodo={handleDeleteTodo}
-                        onToggle={handleToggleTodo} />
+                        items        = { todos }
+                        onDeleteTodo = { handleDeleteTodo }
+                        onToggle     = { handleToggleTodo }
+                        onUpdate     = { handleUpdateTodo }/>
                 </div>
         </div>
     )

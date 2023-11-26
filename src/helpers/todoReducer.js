@@ -24,7 +24,18 @@ export const todoReducer = ( todos, action ) => {
                 return todo;
             });
 
-            
+        case '[TODO] Update Todo':
+            return todos.map(todo => {
+                if (todo.id === action.payload.id) {
+                    return {
+                        ...todo,
+                        todo: action.payload.newValue, 
+                    }
+                }
+
+                return todo;
+            });
+
         default:
             break;
     }
