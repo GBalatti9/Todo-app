@@ -5,29 +5,29 @@ import { TodoEdit } from "./TodoEdit";
 
 export const TodoItem = ({ item, onDeleteTodo, onToggle, onUpdate }) => {
 
-    const [edit, setEdit] = useState(false);
+    const [ edit, setEdit ] = useState(false);
 
     const { formState, onInputChange } = useForm({
         edit: ''
     });
 
     const handleToggleEdit = () => {
-        setEdit(!edit)
+        setEdit( !edit )
     };
 
-    const handleFormUpdate = (e, id) => {
+    const handleFormUpdate = ( e, id, onUpdate ) => {
         e.preventDefault();
-        if ((formState.edit).length <= 1) return;
+        if ( (formState.edit).length <= 1 ) return;
 
-        onUpdate(id, formState.edit);
+        onUpdate( id, formState.edit );
         handleToggleEdit();
     }
 
     useEffect(() => {
-        if (edit) {
+        if ( edit ) {
             inputRef.current.focus();
         }
-    }, [edit]);
+    }, [ edit ]);
 
     const inputRef = useRef();
 
@@ -45,9 +45,9 @@ export const TodoItem = ({ item, onDeleteTodo, onToggle, onUpdate }) => {
                             />
                             :
                             <TodoEdit 
-                                id            = { item.id }
-                                inputRef      = { inputRef }
-                                onInputChange = { onInputChange }
+                                id                  = { item.id }
+                                inputRef            = { inputRef }
+                                onInputChange       = { onInputChange }
                                 handleFormUpdate    = { handleFormUpdate }
                             />
                     }

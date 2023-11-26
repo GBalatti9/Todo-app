@@ -4,7 +4,7 @@ export const TodoView = ({ item, onToggle, onDeleteTodo, handleToggleEdit }) => 
     return (
         <>
             <div 
-                className = "col-2 d-flex justify-content-around"
+                className = "col-3 d-flex justify-content-around"
             >
             <input
                 type     = "checkbox"

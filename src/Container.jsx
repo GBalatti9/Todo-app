@@ -10,13 +10,17 @@ export const Container = () => {
         <div className='bg-primary d-flex justify-content-center align-items-center' style={{height: '100vh'}} >
                 <div className='card bg-white col-4 p-4'>
                     <AddTodoForm
-                        onNewTodo={handleNewTodo}
+                        onNewTodo = { handleNewTodo }
                         />
-                    <TodoList
-                        items        = { todos }
-                        onDeleteTodo = { handleDeleteTodo }
-                        onToggle     = { handleToggleTodo }
-                        onUpdate     = { handleUpdateTodo }/>
+                        {
+                            todos.length > 0 ?
+                            <TodoList
+                                items        = { todos }
+                                onDeleteTodo = { handleDeleteTodo }
+                                onToggle     = { handleToggleTodo }
+                                onUpdate     = { handleUpdateTodo }/>
+                            : ''
+                        }
                 </div>
         </div>
     )
