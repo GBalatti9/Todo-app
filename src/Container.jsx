@@ -6,6 +6,7 @@ import { todoReducer } from './helpers/todoReducer';
 const ACTIONS = {
     ADD_TODO: '[TODO] Add Todo',
     DELETE_TODO: '[TODO] Delete Todo',
+    TOGGLE_TODO: '[TODO] Toggle Todo',
 }
 
 const initialState = [
@@ -51,13 +52,22 @@ export const Container = () => {
             type: ACTIONS.DELETE_TODO,
             payload: id,
         });
-        
+
+    }
+
+    const handleToggleTodo = ( id ) => {
+        dispatch({
+            type: ACTIONS.TOGGLE_TODO,
+            payload: id,
+        })
+
+        // console.log({id});
     }
 
     return (
         <div className='card'>
             <AddTodoForm onNewTodo={handleNewTodo} />
-            <TodoList items={todos} onDeleteTodo={ handleDeleteTodo }/>
+            <TodoList items={todos} onDeleteTodo={ handleDeleteTodo } onToggle={ handleToggleTodo }/>
         </div>
     )
 }
