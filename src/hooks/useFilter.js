@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export const useFilter = (items) => {
     const [filter, setFilter] = useState('all');
