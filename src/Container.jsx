@@ -11,21 +11,23 @@ export const Container = () => {
             className='bg-primary p-4'
             style={{height: '100vh'}} 
             >
-                <h1 className='text-center text-white'>Todo List</h1>
-                <div className='card bg-white col-12 col-sm-6 col-md-4 shadow p-3 m-auto'>
+                
+
+                <div className='card col-12 col-sm-6 col-md-4 shadow p-2 d-flex flex-column'>
+                    <h3 className='text-center'>Add Todo</h3>
                     <AddTodoForm
                         onNewTodo = { handleNewTodo }
                         />
-                        {
-                            todos.length > 0 ?
-                            <TodoList
-                                items        = { todos }
-                                onDeleteTodo = { handleDeleteTodo }
-                                onToggle     = { handleToggleTodo }
-                                onUpdate     = { handleUpdateTodo }/>
-                            : ''
-                        }
+                {
+                    todos.length > 0 ?
+                    <TodoList
+                    items        = { todos }
+                    onDeleteTodo = { handleDeleteTodo }
+                    onToggle     = { handleToggleTodo }
+                    onUpdate     = { handleUpdateTodo }/>
+                    : ''
+                }
                 </div>
-        </div>
+                </div>
     )
 }
