@@ -13,7 +13,7 @@ export const Container = () => {
             >
                 
 
-                <div className='card col-12 col-sm-6 col-md-4 shadow p-2 d-flex flex-column'>
+                <div className='card col-12 col-sm-6 col-md-4 shadow p-2 m-auto'>
                     <h3 className='text-center'>Add Todo</h3>
                     <AddTodoForm
                         onNewTodo = { handleNewTodo }
